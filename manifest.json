@@ -1,0 +1,16 @@
+{
+	"name": "Twitter Ad Blocker",
+	"version": "0.1.0",
+	"description": "Block Promoted Twitter Ads",
+	"homepage_url": "https://github.com/jeffslofish/twitter-ad-blocker",
+	"manifest_version": 2,
+	"icons": {
+    "128": "icon.png"
+  },
+	"content_scripts": [
+    {
+      "matches": ["https://twitter.com/"],
+      "css": ["style.css"]
+    }
+  ]
+}
