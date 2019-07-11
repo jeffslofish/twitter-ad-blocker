@@ -1,1 +1,1 @@
-# twitter-ad-blocker
+# Twitter Promoted Ad Blocker Chrome Extension
