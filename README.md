@@ -1,6 +1,7 @@
 # Twitter Promoted Ad Blocker Chrome Extension
+## (Updated and working as of May 2020)
 
-## To test in development mode
+## To run:
 
 1. Clone or download this repository
 1. Open the extensions page in chrome through the three dots -> More Tools -> Extensions
