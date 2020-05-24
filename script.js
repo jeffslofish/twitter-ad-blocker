@@ -1,31 +1,17 @@
 function removePromotions() {
-  let promotedTweet = $('article:has(svg ~ div:contains("Promoted"))');
-  if (promotedTweet) {
-    promotedTweet.css('display', 'none');
-  }
-
-  let trendingPromotion = $(
-    'div[aria-label*="Timeline: Trending now"]>div>div:has(svg~span>span:contains("Promoted"))'
-  );
-  if (trendingPromotion) {
-    trendingPromotion.css('display', 'none');
-  }
-
-  let whoToFollowPromotion = $(
-    'aside[aria-label*="Who to follow"]>div>div:has(svg~div>span:contains("Promoted"))'
-  );
-  if (whoToFollowPromotion) {
-    whoToFollowPromotion.css('display', 'none');
-  }
+  $('article:has(svg~div:contains("Promoted"))').css('display', 'none');
+  $('div[aria-label*="Timeline: Trending now"]>div>div:has(svg~span>span:contains("Promoted"))').css('display', 'none');
+  $('aside[aria-label*="Who to follow"]>div>div:has(svg~div>span:contains("Promoted"))').css('display', 'none');
+  $('div[aria-label*="Timeline: Explore"]>div>div>div:has(div>div>div>div>div>svg~span>span:contains("Promoted by"))').css('display', 'none');
 }
 
 window.addEventListener('scroll', removePromotions);
-window.addEventListener('click', function(){
-    removePromotions();
-    setTimeout(removePromotions, 250);
-    setTimeout(removePromotions, 500);
-    setTimeout(removePromotions, 750);
-    setTimeout(removePromotions, 1000);
+window.addEventListener('click', function () {
+  removePromotions();
+  setTimeout(removePromotions, 250);
+  setTimeout(removePromotions, 500);
+  setTimeout(removePromotions, 750);
+  setTimeout(removePromotions, 1000);
 });
 
 // Make sure the promotions are removed on the first page load.
@@ -49,4 +35,3 @@ setTimeout(removePromotions, 8500);
 setTimeout(removePromotions, 9000);
 setTimeout(removePromotions, 9500);
 setTimeout(removePromotions, 10000);
-
