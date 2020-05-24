@@ -19,8 +19,14 @@ function removePromotions() {
   }
 }
 
-// Remove promotions on every scroll
 window.addEventListener('scroll', removePromotions);
+window.addEventListener('click', function(){
+    removePromotions();
+    setTimeout(removePromotions, 250);
+    setTimeout(removePromotions, 500);
+    setTimeout(removePromotions, 750);
+    setTimeout(removePromotions, 1000);
+});
 
 // Make sure the promotions are removed on the first page load.
 // Will remove every 500ms for up to the first 10 seconds.
