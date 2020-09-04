@@ -5,33 +5,21 @@ function removePromotions() {
   $('div[aria-label*="Timeline: Explore"]>div>div>div:has(div>div>div>div>div>svg~span>span:contains("Promoted by"))').css('display', 'none');
 }
 
+// Remove promoted ads when scrolling
 window.addEventListener('scroll', removePromotions);
+
+// Remove promted ads when clicking.
+// removePromotions() is called multiple times with a delay
+// between each call to ensure the ads are removed and not seen.
 window.addEventListener('click', function () {
-  removePromotions();
-  setTimeout(removePromotions, 250);
-  setTimeout(removePromotions, 500);
-  setTimeout(removePromotions, 750);
-  setTimeout(removePromotions, 1000);
+  for (let delay = 0; delay <= 1000; delay+= 250) {
+    setTimeout(removePromotions, delay);
+  }
 });
 
-// Make sure the promotions are removed on the first page load.
-// Will remove every 500ms for up to the first 10 seconds.
-setTimeout(removePromotions, 500);
-setTimeout(removePromotions, 1000);
-setTimeout(removePromotions, 1500);
-setTimeout(removePromotions, 2000);
-setTimeout(removePromotions, 2500);
-setTimeout(removePromotions, 3000);
-setTimeout(removePromotions, 3500);
-setTimeout(removePromotions, 4000);
-setTimeout(removePromotions, 4500);
-setTimeout(removePromotions, 5500);
-setTimeout(removePromotions, 6000);
-setTimeout(removePromotions, 6500);
-setTimeout(removePromotions, 7000);
-setTimeout(removePromotions, 7500);
-setTimeout(removePromotions, 8000);
-setTimeout(removePromotions, 8500);
-setTimeout(removePromotions, 9000);
-setTimeout(removePromotions, 9500);
-setTimeout(removePromotions, 10000);
+// Remove promoted ads on the first page load.
+// removePromotions() is called multiple times with a delay
+// between each call to ensure the ads are removed and not seen.
+for (let delay = 500; delay <= 10000; delay+= 500) {
+  setTimeout(removePromotions, delay);
+}
