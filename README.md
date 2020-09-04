@@ -1,5 +1,5 @@
 # Twitter Promoted Ad Blocker Chrome Extension
-## (Updated and working as of August 2020)
+## (Updated and working as of September 2020)
 
 ## To run:
 
